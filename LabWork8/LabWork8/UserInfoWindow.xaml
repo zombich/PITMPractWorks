@@ -1,0 +1,12 @@
+﻿<Window x:Class="LabWork8.UserInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork8"
+        mc:Ignorable="d"
+        Title="Информация" Height="100" Width="600" Loaded="Window_Loaded">
+    <StackPanel>
+        <TextBlock x:Name="InfoTextBlock" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" AutomationProperties.AutomationId="InfoTextBlock"/>
+    </StackPanel>
+</Window>
