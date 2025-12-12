@@ -1,0 +1,274 @@
+{\"date\": \"2025-11-02\",\"temperatureC\": 35,\"temperatureF\": 94,\"summary\": \"Scorching\"}
+
+
+C:\Temp\ispp31\pitm>curl --version
+curl 8.7.1 (Windows) libcurl/8.7.1 Schannel zlib/1.3 WinIDN
+Release-Date: 2024-03-27
+Protocols: dict file ftp ftps http https imap imaps ipfs ipns mqtt pop3 pop3s smb smbs smtp smtps telnet tftp
+Features: alt-svc AsynchDNS HSTS HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM SPNEGO SSL SSPI threadsafe Unicode UnixSockets
+
+C:\Temp\ispp31\pitm>curl http://localhost:5127/weatherforecast
+[{"date":"2025-11-02","temperatureC":-2,"temperatureF":29,"summary":"Balmy"},{"date":"2025-11-03","temperatureC":4,"temperatureF":39,"summary":"Sweltering"},{"date":"2025-11-04","temperatureC":14,"temperatureF":57,"summary":"Chilly"},{"date":"2025-11-05","temperatureC":12,"temperatureF":53,"summary":"Balmy"},{"date":"2025-11-06","temperatureC":16,"temperatureF":60,"summary":"Sweltering"}]
+C:\Temp\ispp31\pitm>curl https://arcotel.ru
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru -v
+* Host arcotel.ru:443 was resolved.
+* IPv6: (none)
+* IPv4: 87.242.107.188
+*   Trying 87.242.107.188:443...
+* Connected to arcotel.ru (87.242.107.188) port 443
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server accepted http/1.1
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: arcotel.ru
+> User-Agent: curl/8.7.1
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 403 Forbidden
+< Server: nginx
+< Date: Sat, 01 Nov 2025 06:00:35 GMT
+< Content-Type: text/html
+< Content-Length: 146
+< Connection: keep-alive
+<
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+* Connection #0 to host arcotel.ru left intact
+
+C:\Temp\ispp31\pitm>curl https://arcotel.ru -v
+* Host arcotel.ru:443 was resolved.
+* IPv6: (none)
+* IPv4: 87.242.107.188
+*   Trying 87.242.107.188:443...
+* Connected to arcotel.ru (87.242.107.188) port 443
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server accepted http/1.1
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: arcotel.ru
+> User-Agent: curl/8.7.1
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 403 Forbidden
+< Server: nginx
+< Date: Sat, 01 Nov 2025 06:00:43 GMT
+< Content-Type: text/html
+< Content-Length: 146
+< Connection: keep-alive
+<
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+* Connection #0 to host arcotel.ru left intact
+
+C:\Temp\ispp31\pitm>curl http://localhost:5127/weatherforecast -v
+* Host localhost:5127 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:5127...
+* Connected to localhost (::1) port 5127
+> GET /weatherforecast HTTP/1.1
+> Host: localhost:5127
+> User-Agent: curl/8.7.1
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Date: Sat, 01 Nov 2025 06:00:49 GMT
+< Server: Kestrel
+< Transfer-Encoding: chunked
+<
+[{"date":"2025-11-02","temperatureC":17,"temperatureF":62,"summary":"Freezing"},{"date":"2025-11-03","temperatureC":-7,"temperatureF":20,"summary":"Scorching"},{"date":"2025-11-04","temperatureC":-5,"temperatureF":24,"summary":"Balmy"},{"date":"2025-11-05","temperatureC":-17,"temperatureF":2,"summary":"Freezing"},{"date":"2025-11-06","temperatureC":37,"temperatureF":98,"summary":"Sweltering"}]* Connection #0 to host localhost left intact
+
+C:\Temp\ispp31\pitm>curl https://vk.com
+curl: (35) schannel: next InitializeSecurityContext failed: CRYPT_E_NO_REVOCATION_CHECK (0x80092012) - Функция отзыва не смогла произвести проверку отзыва для сертификата.
+
+C:\Temp\ispp31\pitm>curl https://ya.ru
+curl: (35) schannel: next InitializeSecurityContext failed: CRYPT_E_NO_REVOCATION_CHECK (0x80092012) - Функция отзыва не смогла произвести проверку отзыва для сертификата.
+
+C:\Temp\ispp31\pitm>curl http://localhost:5127/weatherforecast -v
+* Host localhost:5127 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:5127...
+* Connected to localhost (::1) port 5127
+> GET /weatherforecast HTTP/1.1
+> Host: localhost:5127
+> User-Agent: curl/8.7.1
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Date: Sat, 01 Nov 2025 06:01:28 GMT
+< Server: Kestrel
+< Transfer-Encoding: chunked
+<
+[{"date":"2025-11-02","temperatureC":33,"temperatureF":91,"summary":"Warm"},{"date":"2025-11-03","temperatureC":-16,"temperatureF":4,"summary":"Scorching"},{"date":"2025-11-04","temperatureC":-14,"temperatureF":7,"summary":"Bracing"},{"date":"2025-11-05","temperatureC":48,"temperatureF":118,"summary":"Bracing"},{"date":"2025-11-06","temperatureC":17,"temperatureF":62,"summary":"Freezing"}]* Connection #0 to host localhost left intact
+
+C:\Temp\ispp31\pitm>curl -X POST http://localhost:5127/weatherforecast ^
+Продолжить? -H "Content-Type: application/json" ^
+Продолжить? -d "{\"date\": \"2025-11-02\",\"temperatureC\": 35,\"temperatureF\": 94,\"summary\": \"Scorching\"}"
+{"date":"2025-11-02","temperatureC":35,"temperatureF":94,"summary":"Scorching"}
+C:\Temp\ispp31\pitm>curl -X POST http://localhost:5127/weatherforecast ^
+Продолжить? -H "Content-Type: application/json" ^
+Продолжить? -d "{\"date\": \"2025-11-02\",\"temperatureC\": 35,\"temperatureF\": 94,\"summary\": \"Scorching\"}" -v
+Note: Unnecessary use of -X or --request, POST is already inferred.
+* Host localhost:5127 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:5127...
+* Connected to localhost (::1) port 5127
+> POST /weatherforecast HTTP/1.1
+> Host: localhost:5127
+> User-Agent: curl/8.7.1
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 83
+>
+* upload completely sent off: 83 bytes
+< HTTP/1.1 201 Created
+< Content-Type: application/json; charset=utf-8
+< Date: Sat, 01 Nov 2025 06:08:59 GMT
+< Server: Kestrel
+< Location: /weatherforecast/1
+< Transfer-Encoding: chunked
+<
+{"date":"2025-11-02","temperatureC":35,"temperatureF":94,"summary":"Scorching"}* Connection #0 to host localhost left intact
+
+C:\Temp\ispp31\pitm>curl http://localhost:5127/weatherforecast/saved -v
+* Host localhost:5127 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:5127...
+* Connected to localhost (::1) port 5127
+> GET /weatherforecast/saved HTTP/1.1
+> Host: localhost:5127
+> User-Agent: curl/8.7.1
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Date: Sat, 01 Nov 2025 06:10:46 GMT
+< Server: Kestrel
+< Transfer-Encoding: chunked
+<
+[{"date":"2025-11-02","temperatureC":35,"temperatureF":94,"summary":"Scorching"},{"date":"2025-11-02","temperatureC":35,"temperatureF":94,"summary":"Scorching"}]* Connection #0 to host localhost left intact
+
+C:\Temp\ispp31\pitm>curl http://localhost:5127/weatherforecast/saved -v -o result.json
+* Host localhost:5127 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:5127...
+* Connected to localhost (::1) port 5127
+> GET /weatherforecast/saved HTTP/1.1
+> Host: localhost:5127
+> User-Agent: curl/8.7.1
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Date: Sat, 01 Nov 2025 06:13:03 GMT
+< Server: Kestrel
+< Transfer-Encoding: chunked
+<
+{ [167 bytes data]
+100   161    0   161    0     0   7414      0 --:--:-- --:--:-- --:--:--  8050
+* Connection #0 to host localhost left intact
+
+C:\Temp\ispp31\pitm>
+'{\"id\": 0,\"title\": \"ээээ уууу ааа\",\"genre\": \"ыыыыы ыы е\",\"year\": 2003,\"rating\": 29}'
+
+
+
+curl -X POST http://localhost:5069/anime -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoib2JhbWEiLCJhdWQiOiJUZXN0QXBpIiwiaXNzIjoiUmV5Um9tIiwiZXhwIjoxNzY0MDY4Mjk1LCJpYXQiOjE3NjI3NzIyOTUsIm5iZiI6MTc2Mjc3MjI5NX0.byK4EAofUIV-VHZ6FRxOjyafj3ClQjS0VGVbef-Up58" -d "{\"id\": 0,\"title\": \"eeeyyyaaa\",\"genre\": \"bI bI bI\",\"year\": 2003,\"rating\": 29}" -v
+
