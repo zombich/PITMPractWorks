@@ -9,7 +9,7 @@ namespace Api.Controllers
     [ApiController]
     public class TaskController : ControllerBase
     {
-        public List<MyTask> Tasks { get; set; } = new()
+        public static List<MyTask> Tasks { get; set; } = new()
         {
             new MyTask() { Id = 1, EndOfTask = new DateOnly(2026,10,1), Description = "крутое задание", Name="сделать круто", Status= Status.During},
             new MyTask() { Id = 2, EndOfTask = new DateOnly(2025,9,12), Description = "не крутое задание", Name="сделать не круто", Status= Status.Completed},
@@ -22,13 +22,48 @@ namespace Api.Controllers
         };
 
         // GET: api/<TaskController>
+        /// <summary>
+        /// Получить список всех задач.
+        /// </summary>
+        /// <remarks>
+        /// Пример корректного ответа:
+        ///     GET /api/Task
+        ///     [
+        ///       {
+        ///         "id": 1,
+        ///         "name": "сделать круто",
+        ///         "description": "крутое задание",
+        ///         "endOfTask": "2026-10-01",
+        ///         "status": 0
+        ///       }
+        ///     ]
+        /// </remarks>
+        /// <response code="200">Успешное выполнение</response>
         [HttpGet]
         public ActionResult<IEnumerable<MyTask>> Get()
         {
+
             return Ok(Tasks);
         }
 
         // GET api/<TaskController>/5
+        /// <summary>
+        /// Получить задачу по идентификатору.
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        /// GET /api/Task/5
+        /// Пример корректного ответа:
+        ///     {
+        ///       "id": 5,
+        ///       "name": "ааааааааааа",
+        ///       "description": "я топ",
+        ///       "endOfTask": "2025-01-12",
+        ///       "status": 1
+        ///     }
+        /// </remarks>
+        /// <response code="200">Успешное выполнение</response>
+        /// <response code="404">Задача не найдена</response>
         [HttpGet("{id}")]
         public ActionResult<MyTask> Get(int id)
         {
@@ -40,6 +75,21 @@ namespace Api.Controllers
         }
 
         // POST api/<TaskController>
+        /// <summary>
+        /// Создать новую задачу.
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///     POST /api/Task
+        ///     {
+        ///        "name": "дело123",
+        ///        "description": "аписание",
+        ///        "endOfTask": "2025-12-31",
+        ///        "status": 0
+        ///     }
+        /// </remarks>
+        /// <response code="201">Создана новая задача</response>
+        /// <response code="400">Неверный запрос</response>
         [HttpPost]
         public ActionResult Post([FromBody] MyTask task)
         {
@@ -53,6 +103,22 @@ namespace Api.Controllers
         }
 
         // PUT api/<TaskController>/5
+        /// <summary>
+        /// Обновить задачу по идентификатору.
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///     PUT /api/Task/3
+        ///     {
+        ///       "name": "ооо",
+        ///       "description": "моя оборона",
+        ///       "endOfTask": "2026-01-01",
+        ///       "status": 2
+        ///     }
+        /// </remarks>
+        /// <response code="204">Обновление выполнено успешно (No Content)</response>
+        /// <response code="400">Неверные данные</response>
+        /// <response code="404">Задача не найдена</response>
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] MyTask task)
         {
@@ -71,6 +137,15 @@ namespace Api.Controllers
         }
 
         // DELETE api/<TaskController>/5
+        /// <summary>
+        /// Удалить задачу по идентификатору.
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///     DELETE /api/Task/7
+        /// </remarks>
+        /// <response code="204">Задача успешно удалена</response>
+        /// <response code="404">Задача не найдена</response>
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
@@ -83,5 +158,6 @@ namespace Api.Controllers
 
             return NoContent();
         }
+
     }
 }
