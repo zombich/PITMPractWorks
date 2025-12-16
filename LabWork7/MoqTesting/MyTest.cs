@@ -15,6 +15,7 @@ namespace MoqTesting
 
             order.TotalAmount.Should().Be(69.9m);
             order.CustomerId.Should().Be(_fixture.CustomerId);
+            _fixture.MockMessageBus.Verify(m => m.PublishAsync("order.created", It.IsAny<object>()));
         }
 
         [Fact]
@@ -28,6 +29,7 @@ namespace MoqTesting
         {
             await _fixture.OrderService.ConfirmPaymentAsync(_fixture.Order.Id);
 
+            _fixture.MockMessageBus.Verify(m => m.PublishAsync("order.paid", It.IsAny<object>()));
             _fixture.Order.Status.Should().Be(OrderStatus.Paid);
         }
 
@@ -44,6 +46,7 @@ namespace MoqTesting
 
             await _fixture.OrderService.CancelOrderAsync(order.Id);
 
+            _fixture.MockMessageBus.Verify(m => m.PublishAsync("order.cancelled", It.IsAny<object>()));
             order.Status.Should().Be(OrderStatus.Cancelled);
         }
 
@@ -62,6 +65,7 @@ namespace MoqTesting
 
             await _fixture.OrderService.ShipOrderAsync(order.Id);
 
+            _fixture.MockMessageBus.Verify(m => m.PublishAsync("order.shipped", It.IsAny<object>()));
             order.Status.Should().Be(OrderStatus.Shipped);
         }
 
@@ -71,6 +75,7 @@ namespace MoqTesting
             _fixture.Order.Status = OrderStatus.Pending;
 
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _fixture.OrderService.ShipOrderAsync(_fixture.Order.Id));
+
         }
 
         [Fact]

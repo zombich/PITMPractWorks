@@ -2,7 +2,6 @@ using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.Definitions;
 using FlaUI.UIA3;
-using System.Text.Json.Serialization;
 
 namespace TestingApp
 {
@@ -10,7 +9,7 @@ namespace TestingApp
     {
         private Application _app;
         private UIA3Automation _automation;
-        private readonly string _path = @"C:\Users\fetma\source\repos\zombich\PITMLabWork8\LabWork8\bin\Debug\net8.0-windows\LabWork8.exe";
+        private readonly string _path = @"C:\Users\221\Students\ISPP-31\pitm\PITMPractWorks\LabWork8\LabWork8\bin\Debug\net8.0-windows\LabWork8.exe";
 
         [Fact]
         public void ClickAuthorizationButtonWithoutLoginAndPasswordReturnsError()
@@ -25,8 +24,7 @@ namespace TestingApp
             var errorWindow = _automation.GetDesktop().FindFirstDescendant(cf => cf.ByControlType(ControlType.Window).And(cf.ByName("Ошибка"))).AsWindow();
 
             var screenshot = errorWindow.Capture();
-            screenshot.Save("screenshot.png");
-
+            screenshot.Save(Path.Combine(Environment.CurrentDirectory,"screenshot.png"));
 
             Assert.True(errorWindow is not null);
 
@@ -34,12 +32,12 @@ namespace TestingApp
         }
 
         [Theory]
-        [InlineData("user","qwedfik0efiok")]
-        [InlineData("admin","qdzxcv123!@#!")]
-        [InlineData("moder11","opa")]
-        [InlineData("qwertyu","1111")]
-        [InlineData("up","123")]
-        public void ClickAuthorizationButtonWithIncorrectLoginOrPasswordReturnsError(string login,string password)
+        [InlineData("user", "qwedfik0efiok")]
+        [InlineData("admin", "qdzxcv123!@#!")]
+        [InlineData("moder11", "opa")]
+        [InlineData("qwertyu", "1111")]
+        [InlineData("up", "123")]
+        public void ClickAuthorizationButtonWithIncorrectLoginOrPasswordReturnsError(string login, string password)
         {
             _app = Application.Launch(_path);
             _automation = new UIA3Automation();
@@ -60,14 +58,14 @@ namespace TestingApp
             Assert.True(errorWindow is not null);
 
             var screenshot = errorWindow.Capture();
-            screenshot.Save("screenshot.png");
+            screenshot.Save(Path.Combine(Environment.CurrentDirectory, "screenshot.png"));
 
             _app.Close();
         }
 
 
         [Theory]
-        [InlineData("admin","123")]
+        [InlineData("admin", "123")]
         [InlineData("user", "1111")]
         [InlineData("moder11", "qwerty1")]
         public void ClickAuthorizationButtonWithCorrectLoginAndPasswordOpensInfoWindow(string login, string password)
@@ -92,7 +90,7 @@ namespace TestingApp
 
 
             var screenshot = infoWindow.Capture();
-            screenshot.Save("screenshot.png");
+            screenshot.Save(Path.Combine(Environment.CurrentDirectory, "screenshot.png"));
 
             _app.Close();
         }
@@ -126,7 +124,7 @@ namespace TestingApp
             Assert.True(text.Contains(roleName));
 
             var screenshot = infoWindow.Capture();
-            screenshot.Save("screenshot.png");
+            screenshot.Save(Path.Combine(Environment.CurrentDirectory, "screenshot.png"));
 
             _app.Close();
         }
@@ -178,7 +176,7 @@ namespace TestingApp
             Assert.True(firstText.Contains(firstRole) && secondText.Contains(secondRole));
 
             var screenshot = infoWindow.Capture();
-            screenshot.Save("screenshot.png");
+            screenshot.Save(Path.Combine(Environment.CurrentDirectory, "screenshot.png"));
 
             _app.Close();
         }
