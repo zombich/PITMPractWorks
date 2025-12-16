@@ -1,0 +1,264 @@
+meta {
+  name: Обновить задачу по идентификатору.
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/api/Task/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 1
+}
+
+body:json {
+    {
+      "id": 1,
+      "name": "сделать топово круто",
+      "description": "топовое задание",
+      "endOfTask": "2026-10-01",
+      "status": 1
+    }
+}
+
+docs {
+  ### Обновление задачи по идентификатору
+  - **Метод: PUT /api/Task/{id}**
+  - **Описание: Обновляет данные существующей задачи.**
+  - **Пример запроса:**
+  ```json
+  PUT /api/Task/3
+  
+  {
+    "name": "новое название",
+    "description": "обновлённое описание",
+    "endOfTask": "2026-01-01",
+    "status": 2
+  }
+  ```
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: PUT
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    body:json: {
+      {
+        "id": 0,
+        "name": "",
+        "description": "",
+        "endOfTask": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "dayOfWeek": 0,
+          "dayOfYear": 0,
+          "dayNumber": 0
+        },
+        "status": 0
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 204 Response
+  description: Обновление выполнено успешно (No Content)
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: PUT
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    body:json: {
+      {
+        "id": 0,
+        "name": "",
+        "description": "",
+        "endOfTask": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "dayOfWeek": 0,
+          "dayOfYear": 0,
+          "dayNumber": 0
+        },
+        "status": 0
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 204
+      text: No Content
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 400 Response
+  description: Неверные данные
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: PUT
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    body:json: {
+      {
+        "id": 0,
+        "name": "",
+        "description": "",
+        "endOfTask": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "dayOfWeek": 0,
+          "dayOfYear": 0,
+          "dayNumber": 0
+        },
+        "status": 0
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 400
+      text: Bad Request
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 404 Response
+  description: Задача не найдена
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: PUT
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    body:json: {
+      {
+        "id": 0,
+        "name": "",
+        "description": "",
+        "endOfTask": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "dayOfWeek": 0,
+          "dayOfYear": 0,
+          "dayNumber": 0
+        },
+        "status": 0
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 404
+      text: Not Found
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: PutNoContentResponse
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: PUT
+    mode: json
+    params:path: {
+      id: 1
+    }
+  
+    body:json: {
+        {
+          "id": 1,
+          "name": "сделать топово круто",
+          "description": "топовое задание",
+          "endOfTask": "2026-10-01",
+          "status": 1
+        }
+    }
+  }
+  
+  response: {
+    headers: {
+      date: Tue, 16 Dec 2025 06:21:42 GMT
+      server: Kestrel
+    }
+  
+    status: {
+      code: 204
+      text: No Content
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

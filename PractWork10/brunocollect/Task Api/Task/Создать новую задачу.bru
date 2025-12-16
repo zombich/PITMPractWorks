@@ -1,0 +1,199 @@
+meta {
+  name: Создать новую задачу.
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/Task
+  body: json
+  auth: inherit
+}
+
+body:json {
+    {
+      "id": 1,
+      "name": "сделать круто123123 топ",
+      "description": " топовое и крутое задание",
+      "endOfTask": "2026-10-01",
+      "status": 1
+    }
+}
+
+docs {
+  ### Создание новой задачи
+  - **Метод: POST /api/Task**
+  - **Описание: Создаёт новую задачу в системе.**
+  - **Пример запроса:**
+  ```json
+  POST /api/Task
+  
+  {
+    "name": "дело123",
+    "description": "аписание",
+    "endOfTask": "2025-12-31",
+    "status": 0
+  }
+  ```
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/api/Task
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "id": 0,
+        "name": "",
+        "description": "",
+        "endOfTask": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "dayOfWeek": 0,
+          "dayOfYear": 0,
+          "dayNumber": 0
+        },
+        "status": 0
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 201 Response
+  description: Создана новая задача
+  
+  request: {
+    url: {{baseUrl}}/api/Task
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "id": 0,
+        "name": "",
+        "description": "",
+        "endOfTask": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "dayOfWeek": 0,
+          "dayOfYear": 0,
+          "dayNumber": 0
+        },
+        "status": 0
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 400 Response
+  description: Неверный запрос
+  
+  request: {
+    url: {{baseUrl}}/api/Task
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "id": 0,
+        "name": "",
+        "description": "",
+        "endOfTask": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "dayOfWeek": 0,
+          "dayOfYear": 0,
+          "dayNumber": 0
+        },
+        "status": 0
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 400
+      text: Bad Request
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: PostTaskNoContentResponse
+  
+  request: {
+    url: {{baseUrl}}/api/Task
+    method: POST
+    mode: json
+    body:json: {
+        {
+          "id": 1,
+          "name": "сделать круто123123 топ",
+          "description": " топовое и крутое задание",
+          "endOfTask": "2026-10-01",
+          "status": 1
+        }
+    }
+  }
+  
+  response: {
+    headers: {
+      date: Tue, 16 Dec 2025 06:18:17 GMT
+      server: Kestrel
+    }
+  
+    status: {
+      code: 204
+      text: No Content
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

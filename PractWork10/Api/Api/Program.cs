@@ -61,14 +61,12 @@ app.MapGet("/health", () => Results.Ok(new { Message = "API: OK" }))
 
 app.MapGet("/tasks/search", (HttpRequest http) =>
 {
-    // Попытка получить параметры from/to из query (формат ISO yyyy-MM-dd)
     if (!http.Query.TryGetValue("from", out var fromVals) || !http.Query.TryGetValue("to", out var toVals))
         return Results.BadRequest(new { error = "Параметры 'from' и 'to' обязательны в формате yyyy-MM-dd" });
 
     if (!DateOnly.TryParse(fromVals.First(), out var fromDate) || !DateOnly.TryParse(toVals.First(), out var toDate))
         return Results.BadRequest(new { error = "Неверный формат даты. Ожидается yyyy-MM-dd" });
 
-    // Нормализация диапазона (если from > to — меняем местами)
     if (fromDate > toDate)
     {
         var tmp = fromDate;
@@ -88,17 +86,17 @@ app.MapGet("/tasks/search", (HttpRequest http) =>
 {
     operation.Summary = "Поиск задач по диапазону дат";
     operation.Description = "Возвращает задачи, у которых EndOfTask попадает в указанный диапазон (включительно). Параметры query: from, to (формат yyyy-MM-dd).";
-    operation.Parameters.Add(new Microsoft.OpenApi.Models.OpenApiParameter
+    operation.Parameters.Add(new OpenApiParameter
     {
         Name = "from",
         Description = "Начальная дата диапазона (yyyy-MM-dd)",
         In = Microsoft.OpenApi.Models.ParameterLocation.Query
     });
-    operation.Parameters.Add(new Microsoft.OpenApi.Models.OpenApiParameter
+    operation.Parameters.Add(new OpenApiParameter
     {
         Name = "to",
         Description = "Конечная дата диапазона (yyyy-MM-dd)",
-        In = Microsoft.OpenApi.Models.ParameterLocation.Query
+        In = ParameterLocation.Query
     });
     return operation;
 });

@@ -1,0 +1,76 @@
+meta {
+  name: Проверка состояния API
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/health
+  body: none
+  auth: inherit
+}
+
+docs {
+  ### Получение всех задач
+  
+  - **Метод:** `GET /health`
+  - **Описание:** Возвращает данные о работоспособности сервиса.
+}
+
+example {
+  name: 200 Response
+  description: OK
+  
+  request: {
+    url: {{baseUrl}}/health
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: HealthOkExample
+  
+  request: {
+    url: {{baseUrl}}/health
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      date: Tue, 16 Dec 2025 06:14:07 GMT
+      server: Kestrel
+      transfer-encoding: chunked
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "API: OK"
+        }
+      '''
+    }
+  }
+}

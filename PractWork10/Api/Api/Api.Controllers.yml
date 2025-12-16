@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Api.Controllers
+  commentId: N:Api.Controllers
+  id: Api.Controllers
+  children:
+  - Api.Controllers.TaskController
+  langs:
+  - csharp
+  - vb
+  name: Api.Controllers
+  nameWithType: Api.Controllers
+  fullName: Api.Controllers
+  type: Namespace
+  assemblies:
+  - Api
+references:
+- uid: Api.Controllers.TaskController
+  commentId: T:Api.Controllers.TaskController
+  href: Api.Controllers.TaskController.html
+  name: TaskController
+  nameWithType: TaskController
+  fullName: Api.Controllers.TaskController

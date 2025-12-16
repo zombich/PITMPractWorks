@@ -1,0 +1,21 @@
+{
+  "Api.Controllers": "Api.Controllers.yml",
+  "Api.Controllers.TaskController": "Api.Controllers.TaskController.yml",
+  "Api.Controllers.TaskController.Delete(System.Int32)": "Api.Controllers.TaskController.yml",
+  "Api.Controllers.TaskController.Get": "Api.Controllers.TaskController.yml",
+  "Api.Controllers.TaskController.Get(System.Int32)": "Api.Controllers.TaskController.yml",
+  "Api.Controllers.TaskController.Post(Api.Models.MyTask)": "Api.Controllers.TaskController.yml",
+  "Api.Controllers.TaskController.Put(System.Int32,Api.Models.MyTask)": "Api.Controllers.TaskController.yml",
+  "Api.Controllers.TaskController.Tasks": "Api.Controllers.TaskController.yml",
+  "Api.Models": "Api.Models.yml",
+  "Api.Models.MyTask": "Api.Models.MyTask.yml",
+  "Api.Models.MyTask.Description": "Api.Models.MyTask.yml",
+  "Api.Models.MyTask.EndOfTask": "Api.Models.MyTask.yml",
+  "Api.Models.MyTask.Id": "Api.Models.MyTask.yml",
+  "Api.Models.MyTask.Name": "Api.Models.MyTask.yml",
+  "Api.Models.MyTask.Status": "Api.Models.MyTask.yml",
+  "Api.Models.Status": "Api.Models.Status.yml",
+  "Api.Models.Status.Cancelled": "Api.Models.Status.yml",
+  "Api.Models.Status.Completed": "Api.Models.Status.yml",
+  "Api.Models.Status.During": "Api.Models.Status.yml"
+}

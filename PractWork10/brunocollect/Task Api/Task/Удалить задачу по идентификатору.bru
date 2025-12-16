@@ -1,0 +1,141 @@
+meta {
+  name: Удалить задачу по идентификатору.
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/api/Task/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 2
+}
+
+docs {
+  ### 5. Удаление задачи по идентификатору
+  - **Метод: DELETE /api/Task/{id}**
+  - **Описание: Удаляет задачу по её уникальному идентификатору.**
+  - **Пример запроса:**
+  ```json
+  DELETE /api/Task/7
+  ```
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: DELETE
+    mode: none
+    params:path: {
+      id: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 204 Response
+  description: Задача успешно удалена
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: DELETE
+    mode: none
+    params:path: {
+      id: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 204
+      text: No Content
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 404 Response
+  description: Задача не найдена
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: DELETE
+    mode: none
+    params:path: {
+      id: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 404
+      text: Not Found
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: DeleteNoContentResponse
+  
+  request: {
+    url: {{baseUrl}}/api/Task/:id
+    method: DELETE
+    mode: none
+    params:path: {
+      id: 2
+    }
+  }
+  
+  response: {
+    headers: {
+      date: Tue, 16 Dec 2025 06:22:08 GMT
+      server: Kestrel
+    }
+  
+    status: {
+      code: 204
+      text: No Content
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

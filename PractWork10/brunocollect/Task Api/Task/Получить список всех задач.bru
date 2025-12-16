@@ -1,0 +1,258 @@
+meta {
+  name: Получить список всех задач.
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/Task
+  body: none
+  auth: inherit
+}
+
+docs {
+  ### Получение всех задач
+  
+  - **Метод:** `GET /api/Task`
+  - **Описание:** Возвращает список всех задач.
+  - **Пример запроса:**
+  ```json
+    GET /api/Task
+  [
+    {
+      "id": 1,
+      "name": "сделать круто",
+      "description": "крутое задание",
+      "endOfTask": "2026-10-01",
+      "status": 0
+    },
+    {
+      "id": 2,
+      "name": "сделать не круто",
+      "description": "не крутое задание",
+      "endOfTask": "2025-09-12",
+      "status": 1
+    }
+  ]
+  ```
+}
+
+example {
+  name: 200 Response
+  description: Успешное выполнение
+  
+  request: {
+    url: {{baseUrl}}/api/Task
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Content-Type: text/plain
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+        [
+          {
+            "id": 0,
+            "name": "",
+            "description": "",
+            "endOfTask": {
+              "year": 0,
+              "month": 0,
+              "day": 0,
+              "dayOfWeek": 0,
+              "dayOfYear": 0,
+              "dayNumber": 0
+            },
+            "status": 0
+          }
+        ]
+      '''
+    }
+  }
+}
+
+example {
+  name: 200 Response
+  description: Успешное выполнение
+  
+  request: {
+    url: {{baseUrl}}/api/Task
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "id": 0,
+            "name": "",
+            "description": "",
+            "endOfTask": {
+              "year": 0,
+              "month": 0,
+              "day": 0,
+              "dayOfWeek": 0,
+              "dayOfYear": 0,
+              "dayNumber": 0
+            },
+            "status": 0
+          }
+        ]
+      '''
+    }
+  }
+}
+
+example {
+  name: 200 Response
+  description: Успешное выполнение
+  
+  request: {
+    url: {{baseUrl}}/api/Task
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Content-Type: text/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "id": 0,
+            "name": "",
+            "description": "",
+            "endOfTask": {
+              "year": 0,
+              "month": 0,
+              "day": 0,
+              "dayOfWeek": 0,
+              "dayOfYear": 0,
+              "dayNumber": 0
+            },
+            "status": 0
+          }
+        ]
+      '''
+    }
+  }
+}
+
+example {
+  name: GetUsersOkResponse
+  
+  request: {
+    url: {{baseUrl}}/api/Task
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      date: Tue, 16 Dec 2025 06:17:15 GMT
+      server: Kestrel
+      transfer-encoding: chunked
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "id": 1,
+            "name": "сделать круто",
+            "description": "крутое задание",
+            "endOfTask": "2026-10-01",
+            "status": 1
+          },
+          {
+            "id": 2,
+            "name": "сделать не круто",
+            "description": "не крутое задание",
+            "endOfTask": "2025-09-12",
+            "status": 0
+          },
+          {
+            "id": 3,
+            "name": "бам бам",
+            "description": "бим бим",
+            "endOfTask": "2025-12-12",
+            "status": 1
+          },
+          {
+            "id": 4,
+            "name": "йцукен",
+            "description": "123123",
+            "endOfTask": "2025-11-12",
+            "status": 0
+          },
+          {
+            "id": 5,
+            "name": "ааааааааааа",
+            "description": "я топ",
+            "endOfTask": "2025-01-12",
+            "status": 0
+          },
+          {
+            "id": 6,
+            "name": "не делать",
+            "description": "не задание",
+            "endOfTask": "2025-09-10",
+            "status": 2
+          },
+          {
+            "id": 7,
+            "name": "сесть",
+            "description": "статья 228",
+            "endOfTask": "2025-12-12",
+            "status": 2
+          },
+          {
+            "id": 12,
+            "name": "найти человека",
+            "description": "абубачир",
+            "endOfTask": "2025-12-12",
+            "status": 1
+          }
+        ]
+      '''
+    }
+  }
+}

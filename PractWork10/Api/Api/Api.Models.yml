@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: Api.Models
+  commentId: N:Api.Models
+  id: Api.Models
+  children:
+  - Api.Models.MyTask
+  - Api.Models.Status
+  langs:
+  - csharp
+  - vb
+  name: Api.Models
+  nameWithType: Api.Models
+  fullName: Api.Models
+  type: Namespace
+  assemblies:
+  - Api
+references:
+- uid: Api.Models.MyTask
+  commentId: T:Api.Models.MyTask
+  parent: Api.Models
+  href: Api.Models.MyTask.html
+  name: MyTask
+  nameWithType: MyTask
+  fullName: Api.Models.MyTask
+- uid: Api.Models.Status
+  commentId: T:Api.Models.Status
+  parent: Api.Models
+  href: Api.Models.Status.html
+  name: Status
+  nameWithType: Status
+  fullName: Api.Models.Status
+- uid: Api.Models
+  commentId: N:Api.Models
+  href: Api.html
+  name: Api.Models
+  nameWithType: Api.Models
+  fullName: Api.Models
+  spec.csharp:
+  - uid: Api
+    name: Api
+    href: Api.html
+  - name: .
+  - uid: Api.Models
+    name: Models
+    href: Api.Models.html
+  spec.vb:
+  - uid: Api
+    name: Api
+    href: Api.html
+  - name: .
+  - uid: Api.Models
+    name: Models
+    href: Api.Models.html

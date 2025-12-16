@@ -1,0 +1,1309 @@
+{
+  "name": "Task Api",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "Tasks",
+      "filename": "Tasks",
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "Tasks"
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Поиск задач по диапазону дат",
+          "filename": "Поиск задач по диапазону дат.bru",
+          "seq": 1,
+          "settings": {},
+          "tags": [],
+          "examples": [
+            {
+              "name": "200 Response",
+              "description": "OK",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/tasks/search",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "from",
+                    "value": "",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "to",
+                    "value": "",
+                    "type": "query",
+                    "enabled": false
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "type": "json",
+                  "content": "[\n  {\n    \"id\": 0,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"endOfTask\": {\n      \"year\": 0,\n      \"month\": 0,\n      \"day\": 0,\n      \"dayOfWeek\": 0,\n      \"dayOfYear\": 0,\n      \"dayNumber\": 0\n    },\n    \"status\": 0\n  }\n]"
+                }
+              }
+            },
+            {
+              "name": "400 Response",
+              "description": "Bad Request",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/tasks/search",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "from",
+                    "value": "",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "to",
+                    "value": "",
+                    "type": "query",
+                    "enabled": false
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "400",
+                "statusText": "Bad Request",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}/tasks/search",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "enabled": false
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "enabled": false
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "### Поиск задач по выбранному диапозону\n- **Метод: DELETE /api/Tasks/search**\n- **Описание: Ищет задачи, которые находятся в выбранном диапозоне.**",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Health",
+      "filename": "Health",
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "Health"
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Проверка состояния API",
+          "filename": "Проверка состояния API.bru",
+          "seq": 1,
+          "settings": {},
+          "tags": [],
+          "examples": [
+            {
+              "name": "200 Response",
+              "description": "OK",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/health",
+                "method": "GET",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "HealthOkExample",
+              "description": "",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/health",
+                "method": "GET",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "content-type",
+                    "value": "application/json; charset=utf-8"
+                  },
+                  {
+                    "name": "date",
+                    "value": "Tue, 16 Dec 2025 06:14:07 GMT"
+                  },
+                  {
+                    "name": "server",
+                    "value": "Kestrel"
+                  },
+                  {
+                    "name": "transfer-encoding",
+                    "value": "chunked"
+                  }
+                ],
+                "body": {
+                  "type": "json",
+                  "content": "{\n  \"message\": \"API: OK\"\n}"
+                }
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}/health",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "### Получение всех задач\n\n- **Метод:** `GET /health`\n- **Описание:** Возвращает данные о работоспособности сервиса.",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Task",
+      "filename": "Task",
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "Task"
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Обновить задачу по идентификатору.",
+          "filename": "Обновить задачу по идентификатору.bru",
+          "seq": 4,
+          "settings": {},
+          "tags": [],
+          "examples": [
+            {
+              "name": "200 Response",
+              "description": "Success",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "PUT",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "204 Response",
+              "description": "Обновление выполнено успешно (No Content)",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "PUT",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "204",
+                "statusText": "No Content",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "400 Response",
+              "description": "Неверные данные",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "PUT",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "400",
+                "statusText": "Bad Request",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "404 Response",
+              "description": "Задача не найдена",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "PUT",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "404",
+                "statusText": "Not Found",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "PutNoContentResponse",
+              "description": "",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "PUT",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "1",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "json",
+                  "json": "  {\n    \"id\": 1,\n    \"name\": \"сделать топово круто\",\n    \"description\": \"топовое задание\",\n    \"endOfTask\": \"2026-10-01\",\n    \"status\": 1\n  }",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "204",
+                "statusText": "No Content",
+                "headers": [
+                  {
+                    "name": "date",
+                    "value": "Tue, 16 Dec 2025 06:21:42 GMT"
+                  },
+                  {
+                    "name": "server",
+                    "value": "Kestrel"
+                  }
+                ],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}/api/Task/:id",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "  {\n    \"id\": 1,\n    \"name\": \"сделать топово круто\",\n    \"description\": \"топовое задание\",\n    \"endOfTask\": \"2026-10-01\",\n    \"status\": 1\n  }",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "### Обновление задачи по идентификатору\n- **Метод: PUT /api/Task/{id}**\n- **Описание: Обновляет данные существующей задачи.**\n- **Пример запроса:**\n`\nPUT /api/Task/3\n\n{\n  \"name\": \"новое название\",\n  \"description\": \"обновлённое описание\",\n  \"endOfTask\": \"2026-01-01\",\n  \"status\": 2\n}\n`",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Получить задачу по идентификатору.",
+          "filename": "Получить задачу по идентификатору.bru",
+          "seq": 3,
+          "settings": {},
+          "tags": [],
+          "examples": [
+            {
+              "name": "200 Response",
+              "description": "Успешное выполнение",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "type": "text",
+                  "content": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}"
+                }
+              }
+            },
+            {
+              "name": "200 Response",
+              "description": "Успешное выполнение",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "type": "json",
+                  "content": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}"
+                }
+              }
+            },
+            {
+              "name": "200 Response",
+              "description": "Успешное выполнение",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "text/json"
+                  }
+                ],
+                "body": {
+                  "type": "json",
+                  "content": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}"
+                }
+              }
+            },
+            {
+              "name": "404 Response",
+              "description": "Задача не найдена",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "404",
+                "statusText": "Not Found",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "GetByIdResponseOk",
+              "description": "",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "1",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "content-type",
+                    "value": "application/json; charset=utf-8"
+                  },
+                  {
+                    "name": "date",
+                    "value": "Tue, 16 Dec 2025 06:19:32 GMT"
+                  },
+                  {
+                    "name": "server",
+                    "value": "Kestrel"
+                  },
+                  {
+                    "name": "transfer-encoding",
+                    "value": "chunked"
+                  }
+                ],
+                "body": {
+                  "type": "json",
+                  "content": "{\n  \"id\": 1,\n  \"name\": \"сделать круто\",\n  \"description\": \"крутое задание\",\n  \"endOfTask\": \"2026-10-01\",\n  \"status\": 1\n}"
+                }
+              }
+            },
+            {
+              "name": "GetByIdNotFoundResponse",
+              "description": "",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "GET",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "1123123",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "404",
+                "statusText": "Not Found",
+                "headers": [
+                  {
+                    "name": "content-type",
+                    "value": "application/problem+json; charset=utf-8"
+                  },
+                  {
+                    "name": "date",
+                    "value": "Tue, 16 Dec 2025 06:19:52 GMT"
+                  },
+                  {
+                    "name": "server",
+                    "value": "Kestrel"
+                  },
+                  {
+                    "name": "transfer-encoding",
+                    "value": "chunked"
+                  }
+                ],
+                "body": {
+                  "type": "text",
+                  "content": "{\n  \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.5\",\n  \"title\": \"Not Found\",\n  \"status\": 404,\n  \"traceId\": \"00-02747034e8a91f6d7a39c7da684f3707-73b43e48824c7069-00\"\n}"
+                }
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}/api/Task/:id",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "1123123",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "### Получение задачи по идентификатору\n- **Метод: GET /api/Task/{id}**\n- **Описание: Возвращает задачу по её уникальному идентификатору.**\n- **Пример ответа:**\n`\nGET /api/Task/5\n{\n  \"id\": 5,\n  \"name\": \"ааааааааааа\",\n  \"description\": \"я топ\",\n  \"endOfTask\": \"2025-01-12\",\n  \"status\": 1\n}",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Получить список всех задач.",
+          "filename": "Получить список всех задач.bru",
+          "seq": 1,
+          "settings": {},
+          "tags": [],
+          "examples": [
+            {
+              "name": "200 Response",
+              "description": "Успешное выполнение",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task",
+                "method": "GET",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "type": "text",
+                  "content": "[\n  {\n    \"id\": 0,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"endOfTask\": {\n      \"year\": 0,\n      \"month\": 0,\n      \"day\": 0,\n      \"dayOfWeek\": 0,\n      \"dayOfYear\": 0,\n      \"dayNumber\": 0\n    },\n    \"status\": 0\n  }\n]"
+                }
+              }
+            },
+            {
+              "name": "200 Response",
+              "description": "Успешное выполнение",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task",
+                "method": "GET",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "type": "json",
+                  "content": "[\n  {\n    \"id\": 0,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"endOfTask\": {\n      \"year\": 0,\n      \"month\": 0,\n      \"day\": 0,\n      \"dayOfWeek\": 0,\n      \"dayOfYear\": 0,\n      \"dayNumber\": 0\n    },\n    \"status\": 0\n  }\n]"
+                }
+              }
+            },
+            {
+              "name": "200 Response",
+              "description": "Успешное выполнение",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task",
+                "method": "GET",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "text/json"
+                  }
+                ],
+                "body": {
+                  "type": "json",
+                  "content": "[\n  {\n    \"id\": 0,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"endOfTask\": {\n      \"year\": 0,\n      \"month\": 0,\n      \"day\": 0,\n      \"dayOfWeek\": 0,\n      \"dayOfYear\": 0,\n      \"dayNumber\": 0\n    },\n    \"status\": 0\n  }\n]"
+                }
+              }
+            },
+            {
+              "name": "GetUsersOkResponse",
+              "description": "",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task",
+                "method": "GET",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [
+                  {
+                    "name": "content-type",
+                    "value": "application/json; charset=utf-8"
+                  },
+                  {
+                    "name": "date",
+                    "value": "Tue, 16 Dec 2025 06:17:15 GMT"
+                  },
+                  {
+                    "name": "server",
+                    "value": "Kestrel"
+                  },
+                  {
+                    "name": "transfer-encoding",
+                    "value": "chunked"
+                  }
+                ],
+                "body": {
+                  "type": "json",
+                  "content": "[\n  {\n    \"id\": 1,\n    \"name\": \"сделать круто\",\n    \"description\": \"крутое задание\",\n    \"endOfTask\": \"2026-10-01\",\n    \"status\": 1\n  },\n  {\n    \"id\": 2,\n    \"name\": \"сделать не круто\",\n    \"description\": \"не крутое задание\",\n    \"endOfTask\": \"2025-09-12\",\n    \"status\": 0\n  },\n  {\n    \"id\": 3,\n    \"name\": \"бам бам\",\n    \"description\": \"бим бим\",\n    \"endOfTask\": \"2025-12-12\",\n    \"status\": 1\n  },\n  {\n    \"id\": 4,\n    \"name\": \"йцукен\",\n    \"description\": \"123123\",\n    \"endOfTask\": \"2025-11-12\",\n    \"status\": 0\n  },\n  {\n    \"id\": 5,\n    \"name\": \"ааааааааааа\",\n    \"description\": \"я топ\",\n    \"endOfTask\": \"2025-01-12\",\n    \"status\": 0\n  },\n  {\n    \"id\": 6,\n    \"name\": \"не делать\",\n    \"description\": \"не задание\",\n    \"endOfTask\": \"2025-09-10\",\n    \"status\": 2\n  },\n  {\n    \"id\": 7,\n    \"name\": \"сесть\",\n    \"description\": \"статья 228\",\n    \"endOfTask\": \"2025-12-12\",\n    \"status\": 2\n  },\n  {\n    \"id\": 12,\n    \"name\": \"найти человека\",\n    \"description\": \"абубачир\",\n    \"endOfTask\": \"2025-12-12\",\n    \"status\": 1\n  }\n]"
+                }
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}/api/Task",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "### Получение всех задач\n\n- **Метод:** `GET /api/Task`\n- **Описание:** Возвращает список всех задач.\n- **Пример запроса:**\n`\n  GET /api/Task\n[\n  {\n    \"id\": 1,\n    \"name\": \"сделать круто\",\n    \"description\": \"крутое задание\",\n    \"endOfTask\": \"2026-10-01\",\n    \"status\": 0\n  },\n  {\n    \"id\": 2,\n    \"name\": \"сделать не круто\",\n    \"description\": \"не крутое задание\",\n    \"endOfTask\": \"2025-09-12\",\n    \"status\": 1\n  }\n]",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Создать новую задачу.",
+          "filename": "Создать новую задачу.bru",
+          "seq": 2,
+          "settings": {},
+          "tags": [],
+          "examples": [
+            {
+              "name": "200 Response",
+              "description": "Success",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task",
+                "method": "POST",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "201 Response",
+              "description": "Создана новая задача",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task",
+                "method": "POST",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "201",
+                "statusText": "Created",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "400 Response",
+              "description": "Неверный запрос",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task",
+                "method": "POST",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"description\": \"\",\n  \"endOfTask\": {\n    \"year\": 0,\n    \"month\": 0,\n    \"day\": 0,\n    \"dayOfWeek\": 0,\n    \"dayOfYear\": 0,\n    \"dayNumber\": 0\n  },\n  \"status\": 0\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "400",
+                "statusText": "Bad Request",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "PostTaskNoContentResponse",
+              "description": "",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task",
+                "method": "POST",
+                "headers": [],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "  {\n    \"id\": 1,\n    \"name\": \"сделать круто123123 топ\",\n    \"description\": \" топовое и крутое задание\",\n    \"endOfTask\": \"2026-10-01\",\n    \"status\": 1\n  }",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "204",
+                "statusText": "No Content",
+                "headers": [
+                  {
+                    "name": "date",
+                    "value": "Tue, 16 Dec 2025 06:18:17 GMT"
+                  },
+                  {
+                    "name": "server",
+                    "value": "Kestrel"
+                  }
+                ],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}/api/Task",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "  {\n    \"id\": 1,\n    \"name\": \"сделать круто123123 топ\",\n    \"description\": \" топовое и крутое задание\",\n    \"endOfTask\": \"2026-10-01\",\n    \"status\": 1\n  }",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "### Создание новой задачи\n- **Метод: POST /api/Task**\n- **Описание: Создаёт новую задачу в системе.**\n- **Пример запроса:**\n`\nPOST /api/Task\n\n{\n  \"name\": \"дело123\",\n  \"description\": \"аписание\",\n  \"endOfTask\": \"2025-12-31\",\n  \"status\": 0\n}\n`",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Удалить задачу по идентификатору.",
+          "filename": "Удалить задачу по идентификатору.bru",
+          "seq": 5,
+          "settings": {},
+          "tags": [],
+          "examples": [
+            {
+              "name": "200 Response",
+              "description": "Success",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "DELETE",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "200",
+                "statusText": "OK",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "204 Response",
+              "description": "Задача успешно удалена",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "DELETE",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "204",
+                "statusText": "No Content",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "404 Response",
+              "description": "Задача не найдена",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "DELETE",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "404",
+                "statusText": "Not Found",
+                "headers": [],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            },
+            {
+              "name": "DeleteNoContentResponse",
+              "description": "",
+              "type": "http",
+              "request": {
+                "url": "{{baseUrl}}/api/Task/:id",
+                "method": "DELETE",
+                "headers": [],
+                "params": [
+                  {
+                    "name": "id",
+                    "value": "2",
+                    "type": "path",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                }
+              },
+              "response": {
+                "status": "204",
+                "statusText": "No Content",
+                "headers": [
+                  {
+                    "name": "date",
+                    "value": "Tue, 16 Dec 2025 06:22:08 GMT"
+                  },
+                  {
+                    "name": "server",
+                    "value": "Kestrel"
+                  }
+                ],
+                "body": {
+                  "type": "text",
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}/api/Task/:id",
+            "method": "DELETE",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "2",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "### 5. Удаление задачи по идентификатору\n- **Метод: DELETE /api/Task/{id}**\n- **Описание: Удаляет задачу по её уникальному идентификатору.**\n- **Пример запроса:**\n`\nDELETE /api/Task/7\n`",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "environments": [],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "none"
+      },
+      "vars": {
+        "req": [
+          {
+            "name": "baseUrl",
+            "value": "http://localhost:5141",
+            "enabled": true,
+            "local": false,
+            "uid": "88EmAHX8Q5fEDmeTG2NlE"
+          }
+        ]
+      }
+    },
+    "meta": {
+      "name": "Task Api"
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "Task Api",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}

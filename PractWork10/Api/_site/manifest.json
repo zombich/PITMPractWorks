@@ -1,0 +1,198 @@
+{
+  "source_base_path": "C:/Users/221/Students/ISPP-31/pitm/PITMPractWorks/PractWork10/Api",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Api.Controllers.TaskController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Api.Controllers.TaskController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Api.Controllers.TaskController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Api.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Api.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Api.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Api.Models.MyTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Api.Models.MyTask.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Api.Models.MyTask",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Api.Models.Status.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Api.Models.Status.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Api.Models.Status",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Api/Api.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/Api.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Api.Models",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Api/bin/Debug/net8.0/description.md",
+      "output": {
+        ".html": {
+          "relative_path": "Api/bin/Debug/net8.0/description.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Api/bin/Debug/net8.0/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "Api/bin/Debug/net8.0/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Api/bin/Debug/net8.0/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "Api/bin/Debug/net8.0/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Api/bin/Debug/net8.0/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/bin/Debug/net8.0/toc.html"
+        },
+        ".json": {
+          "relative_path": "Api/bin/Debug/net8.0/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Api/toc.html"
+        },
+        ".json": {
+          "relative_path": "Api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "description.md",
+      "output": {
+        ".html": {
+          "relative_path": "description.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

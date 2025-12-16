@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: Api.Models.Status
+  commentId: T:Api.Models.Status
+  id: Status
+  parent: Api.Models
+  children:
+  - Api.Models.Status.Cancelled
+  - Api.Models.Status.Completed
+  - Api.Models.Status.During
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: Status
+  fullName: Api.Models.Status
+  type: Enum
+  source:
+    remote:
+      path: PractWork10/Api/Api/Models/MyTask.cs
+      branch: main
+      repo: https://github.com/zombich/PITMPractWorks.git
+    id: Status
+    path: Api/Models/MyTask.cs
+    startLine: 12
+  assemblies:
+  - Api
+  namespace: Api.Models
+  syntax:
+    content: public enum Status
+    content.vb: Public Enum Status
+- uid: Api.Models.Status.Completed
+  commentId: F:Api.Models.Status.Completed
+  id: Completed
+  parent: Api.Models.Status
+  langs:
+  - csharp
+  - vb
+  name: Completed
+  nameWithType: Status.Completed
+  fullName: Api.Models.Status.Completed
+  type: Field
+  source:
+    remote:
+      path: PractWork10/Api/Api/Models/MyTask.cs
+      branch: main
+      repo: https://github.com/zombich/PITMPractWorks.git
+    id: Completed
+    path: Api/Models/MyTask.cs
+    startLine: 14
+  assemblies:
+  - Api
+  namespace: Api.Models
+  syntax:
+    content: Completed = 0
+    return:
+      type: Api.Models.Status
+- uid: Api.Models.Status.During
+  commentId: F:Api.Models.Status.During
+  id: During
+  parent: Api.Models.Status
+  langs:
+  - csharp
+  - vb
+  name: During
+  nameWithType: Status.During
+  fullName: Api.Models.Status.During
+  type: Field
+  source:
+    remote:
+      path: PractWork10/Api/Api/Models/MyTask.cs
+      branch: main
+      repo: https://github.com/zombich/PITMPractWorks.git
+    id: During
+    path: Api/Models/MyTask.cs
+    startLine: 15
+  assemblies:
+  - Api
+  namespace: Api.Models
+  syntax:
+    content: During = 1
+    return:
+      type: Api.Models.Status
+- uid: Api.Models.Status.Cancelled
+  commentId: F:Api.Models.Status.Cancelled
+  id: Cancelled
+  parent: Api.Models.Status
+  langs:
+  - csharp
+  - vb
+  name: Cancelled
+  nameWithType: Status.Cancelled
+  fullName: Api.Models.Status.Cancelled
+  type: Field
+  source:
+    remote:
+      path: PractWork10/Api/Api/Models/MyTask.cs
+      branch: main
+      repo: https://github.com/zombich/PITMPractWorks.git
+    id: Cancelled
+    path: Api/Models/MyTask.cs
+    startLine: 16
+  assemblies:
+  - Api
+  namespace: Api.Models
+  syntax:
+    content: Cancelled = 2
+    return:
+      type: Api.Models.Status
+references:
+- uid: Api.Models
+  commentId: N:Api.Models
+  href: Api.html
+  name: Api.Models
+  nameWithType: Api.Models
+  fullName: Api.Models
+  spec.csharp:
+  - uid: Api
+    name: Api
+    href: Api.html
+  - name: .
+  - uid: Api.Models
+    name: Models
+    href: Api.Models.html
+  spec.vb:
+  - uid: Api
+    name: Api
+    href: Api.html
+  - name: .
+  - uid: Api.Models
+    name: Models
+    href: Api.Models.html
+- uid: Api.Models.Status
+  commentId: T:Api.Models.Status
+  parent: Api.Models
+  href: Api.Models.Status.html
+  name: Status
+  nameWithType: Status
+  fullName: Api.Models.Status
